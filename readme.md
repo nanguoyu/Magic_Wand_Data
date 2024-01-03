@@ -10,7 +10,7 @@ The dataset for this project is essential for training and testing our machine l
 
 ### Training Details
 - **Training Time:** 6.4 seconds
-- **Test Accuracy (Float32 Model):** 88.0%
+- **Test Accuracy:** 88.0%
 - **Model Complexity:**
   - FLOPs: 690.88 KFLOPs
   - MACs: 330.32 KMACs
