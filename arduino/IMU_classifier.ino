@@ -26,7 +26,8 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <iostream>
 
-#include "model.h"
+//#include "model.h"
+#include "quantized_model.h"
 
 const float accelerationThreshold = 2.5; // threshold of significant in G's
 const int numSamples = 119;
@@ -81,7 +82,7 @@ void setup() {
   Serial.println();
 
   // get the TFL representation of the model byte array
-  tflModel = tflite::GetModel(model_tflite);
+  tflModel = tflite::GetModel(model_tflite);  
   if (tflModel->version() != TFLITE_SCHEMA_VERSION) {
     Serial.println("Model schema mismatch!");
     while (1);
@@ -158,15 +159,15 @@ void loop() {
           return;
         }
         finalmodelEndTime = micros();
-        Serial.print("Runtime of finalmodel: ");
+        Serial.print("[log] Runtime of finalmodel: ");
         Serial.print(finalmodelEndTime - finalmodelStartTime);
         Serial.println(" microseconds");
         avgFinalmodelTime += finalmodelEndTime - finalmodelStartTime;
         result = (float)avgFinalmodelTime / count;
-        Serial.print("AVG Runtime of finalmodel: ");
+        Serial.print("[log] AVG Runtime of finalmodel: ");
         Serial.print(result);
         Serial.println(" microseconds");
-
+               
         // Loop through the output tensor values from the model
         for (i = 0; i < NUM_GESTURES; i++) {
           Serial.print(GESTURES[i]);
