@@ -4,7 +4,7 @@ Welcome to the Magic Wand Project repository! This project demonstrates the appl
 
 ## Dataset
 The dataset for this project is essential for training and testing our machine learning model. It includes a total of 125 samples, divided into 5 classes with each class having 25 samples. Out of these, 100 samples are used for training, and 25 for testing.
-- Access the dataset [here](./data).
+- Access the dataset [here](./data). Note: the original datasets locate in [./data/*.csv](./data). We then split it into [./data/train/*.csv](./data/train/) and [./data/test/*.csv](./data/test/). You can replace ‼️**your own test dataset**‼️ with the files in [./data/test/*.csv](./data/test/).
 
 ## Model Profile
 
